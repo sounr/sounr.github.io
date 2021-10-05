@@ -39,7 +39,7 @@ jobs:
       - name: "where to save location e.g my-name-space/favorite-image"
         uses: docker/metadata-action@v3
           with:
-           images: sounr/test
+           images: sounr:test
       - name: "push docker"
         uses: docker/build-push-action@v2
           context: .
