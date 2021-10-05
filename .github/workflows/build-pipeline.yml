@@ -40,7 +40,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v3
       with:
-          images: sounr:test
+          images: sounr/test
           
       - name: "push docker"
         uses: docker/build-push-action@v2
