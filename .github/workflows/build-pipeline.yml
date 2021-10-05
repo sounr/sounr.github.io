@@ -21,7 +21,7 @@ jobs:
         
       # Step 3 - Add tests and linting here
   deploy:
-    needs: [nom ci, npm test]
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
