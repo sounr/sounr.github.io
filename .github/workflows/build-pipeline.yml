@@ -31,14 +31,21 @@ jobs:
           LAST_NAME: Octocat
           SECRET: ${{secrets.PASSWORD}}
       - name: "login docker"
-        run: docker/login-action@v1
+        uses: docker/login-action@v1
         env:
-          USERNAME: ${{secrets.DOCKER_USERNAME}}
-          PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+           with:
+           username: ${{ secrets.DOCKER_USERNAME }}
+           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: "where to save location e.g my-name-space/favorite-image"
-        run: docker/metadata-action@v3
+        uses: docker/metadata-action@v3
+          with:
+           images: sounr/test
       - name: "push docker"
-        run: docker/build-push-action@v2
+        uses: docker/build-push-action@v2
+          context: .
+           push: true
+           tags: ${{ steps.meta.outputs.tags }}
+           labels: ${{ steps.meta.outputs.labels }}
         
       # Step 3 - Add tests and linting here
   deploy:
