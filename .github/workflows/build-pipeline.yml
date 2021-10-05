@@ -32,6 +32,9 @@ jobs:
           SECRET: ${{secrets.PASSWORD}}
       - name: "login docker"
         run: docker/login-action@v1
+        env:
+          USERNAME: ${{secrets.DOCKER_USERNAME}}
+          PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       - name: "where to save location e.g my-name-space/favorite-image"
         run: docker/metadata-action@v3
       - name: "push docker"
