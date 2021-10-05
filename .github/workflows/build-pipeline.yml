@@ -17,6 +17,7 @@ jobs:
           node-version: '14.x'
       - name: Install dependencies
         run: npm ci
+      - name: yo
         run: npm test
         
       # Step 3 - Add tests and linting here
