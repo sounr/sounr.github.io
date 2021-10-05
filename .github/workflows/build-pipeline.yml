@@ -37,9 +37,9 @@ jobs:
            username: ${{ secrets.DOCKER_USERNAME }}
            password: ${{ secrets.DOCKER_PASSWORD }}
       - name: "where to save location e.g my-name-space/favorite-image"
-      id: meta
-      uses: docker/metadata-action@v3
-      with:
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
           images: sounr/test
           
       - name: "push docker"
