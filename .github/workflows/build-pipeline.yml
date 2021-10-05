@@ -45,10 +45,10 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./sounr
-          file: ./sounr/sounr.github.io
+          file: ./sounr/test
           push: true
-         # tags: ${{ steps.meta.outputs.tags }}
-         # labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
            
 
         
